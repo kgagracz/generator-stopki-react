@@ -1,6 +1,7 @@
 import './App.css';
 import {Link} from 'react-router';
 import React, { Component } from 'react';
+import styled from 'styled-components';
 
 import Preloader from './Components/Preloader';
 import GeneratorForm from './Components/GeneratorForm';
@@ -17,13 +18,14 @@ class App extends Component {
           tel2: '+48 222 222 222',
           email: 'imie.nazwisko@firma.pl',
           website: 'www.netsendo.pl',
+          logo: 'logo url',
           avatarUrl: 'http://stopka.ec-at.com/img/avatar-woman.png',
-          fbUrl: '',
-          igUrl: '',
-          liUrl: '',
-          bannerImgUrl: '',
-          bannerLinkUrl: '',
-          bottomText: '',
+          fbUrl: 'social url',
+          igUrl: 'social url',
+          liUrl: 'social url',
+          bannerImgUrl: 'baner img',
+          bannerLinkUrl: 'baner link',
+          bottomText: 'bottom tekst',
         },
         labels: {
           nameSurname: 'Imię i nazwisko',
@@ -40,7 +42,8 @@ class App extends Component {
           bannerLinkUrl: 'Link do którego prowadzi baner',
           bottomText: 'Dolny tekst',
         }
-      }
+      },
+      company: 'netsendo'
    }
 
   componentDidMount() {
@@ -53,18 +56,29 @@ class App extends Component {
     this.setState({
       name:value
     })
+  }
 
+  changeCompany = (company) => {
+    this.setState({company: company})
   }
 
   render() { 
     return ( 
       <>
-        <Preloader />
-        <GeneratorForm state={this.state} changeSignatureData={this.changeSignatureData}/>
-        <Signature />
-      </> 
+        <Preloader/>
+        <AppWrapper>
+          <GeneratorForm changeCompany={this.changeCompany} state={this.state} changeSignatureData={this.changeSignatureData}/>
+          <div>
+            <Signature company={this.state.company} signature={this.state.signature}/>
+          </div>
+        </AppWrapper> 
+      </>
     );
   }
 }
  
+const AppWrapper = styled.div`
+  display: flex;
+`
+
 export default App;

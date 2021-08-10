@@ -14,10 +14,10 @@ const GeneratorForm = (props) => {
                 <h1>Wybierz motyw</h1>
                 <StyledThemeSwitchersContainer>
                     <Router>
-                        <Link>Netsendo</Link>
-                        <Link> EC-AT</Link>
-                        <Link>Aderlo</Link>
-                        <Link>BD</Link>
+                        <StyledButton onClick={() => props.changeCompany('netsendo')}>Netsendo</StyledButton>
+                        <StyledButton onClick={() => props.changeCompany('ecat')}> EC-AT</StyledButton>
+                        <StyledButton onClick={() => props.changeCompany('aderlo')}>Aderlo</StyledButton>
+                        <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>
                     </Router>
                 </StyledThemeSwitchersContainer>
                 <Form changeSignatureData={props.changeSignatureData} state={props.state}/>
