@@ -20,7 +20,7 @@ const GeneratorForm = (props) => {
                         <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>
                     </Router>
                 </StyledThemeSwitchersContainer>
-                <Form changeSignatureData={props.changeSignatureData} state={props.state}/>
+                <Form changeSignatureData={props.changeSignatureData} signature={props.signature}/>
 
         </StyledGeneratorForm>
     </> );
