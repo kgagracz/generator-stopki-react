@@ -2,8 +2,9 @@ import './App.css';
 import {Link} from 'react-router';
 import React, { Component } from 'react';
 
-import GeneratorForm from './Components/GeneratorForm';
 import Preloader from './Components/Preloader';
+import GeneratorForm from './Components/GeneratorForm';
+import Signature from './Components/Signature';
 
 
 class App extends Component {
@@ -60,6 +61,7 @@ class App extends Component {
       <>
         <Preloader />
         <GeneratorForm state={this.state} changeSignatureData={this.changeSignatureData}/>
+        <Signature />
       </> 
     );
   }
