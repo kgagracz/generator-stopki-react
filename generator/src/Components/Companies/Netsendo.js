@@ -21,7 +21,7 @@ const Netsendo = (props) => {
                         data-output-target="position" 
                         class="position-typography-output" 
                         style={styles.posistion}>
-                            {props.signature.position ? props.signature.position : null}
+                            {props.signature.position ? props.signature.position  : null}
                         </p>
                         <ul style={styles.ul}>
                             <li style={styles.li}>
@@ -45,11 +45,11 @@ const Netsendo = (props) => {
                     </td> 
                 </tr>
                 <tr>
-                    <td colSpan="3" style={styles.flexCC, { padding: '10px 0 0 0' }}>
+                    <td colSpan="3" style={styles.flexCC}>
                         <a href="http://netsendo.pl"><img src="https://netsendo.com/wp-content/uploads/2021/07/logo-mailing.png " alt="logo"></img></a>
                     </td>
                 </tr>
-                <tr style={styles.flexCC, { padding: '15px'} }>
+                <tr style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px 0'}}>
                     <td>
                         <a style={styles.SMLinks} id="fb-output" href="https://www.facebook.com/NetSendoPL">
                             <img src="http://stopka.ec-at.com/img/fb.png" widtd="20" height="20" alt=""></img>

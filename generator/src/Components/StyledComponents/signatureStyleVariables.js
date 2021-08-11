@@ -19,7 +19,7 @@ export const styles = {
         listStyleType: 'none',
         fontSize: '14px',
         color: 'grey',
-        padding: '0 0 0 10px',
+        padding: '10px 0 0 10px',
     },
     li: {
         width: '100%',

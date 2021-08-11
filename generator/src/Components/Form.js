@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react';
 import styled from 'styled-components';
+import { StyledButton } from './StyledComponents/Button.style';
 
 import { StyledInput, StyledLabelContainer } from './StyledComponents/Input.style';
 const Form = (props) => {
@@ -24,13 +25,15 @@ const Form = (props) => {
     return ( <>
         <StyledForm>
             {displayInputs}
-            <button onClick={() => props.changeSignatureData(signature)}>kliknij </button>
+            <StyledLabelContainer>
+                <StyledButton onClick={() => props.changeSignatureData(signature)}>Generuj </StyledButton>
+            </StyledLabelContainer>
         </StyledForm>
     </> );
 }
  
 const StyledForm = styled.div`
-
+    width: 100%;
 `
 
 export default Form;

@@ -8,11 +8,8 @@ import styled from 'styled-components';
 
 import Preloader from './Components/Preloader';
 import GeneratorForm from './Components/GeneratorForm';
-import Signature from './Components/Signature';
-
-import { StyledSignatureContainer } from './Components/StyledComponents/StyledSignatureContainer';
-
-// usuwam tablice z objektu ze state trzeba zmienic w JSX 
+import GeneratorOutput from './Components/GeneratorOutput';
+ 
 class App extends Component {
   state = { 
     signature: {
@@ -36,8 +33,10 @@ class App extends Component {
    }
 
   componentDidMount() {
-    document.getElementById('preloader').remove();
-    document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML
+    document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML;
+    setInterval(() => {
+      document.getElementById('preloader').classList.remove('show-preloader');
+    }, 700);
   }
 
   changeSignatureData = (signature) => {
@@ -48,22 +47,25 @@ class App extends Component {
     this.setState({company: company})
   }
   
+  copyCode = () => {
+    document.querySelector('#code').select();
+    document.execCommand('copy');
+    alert('Kod stopki został skopiowany do schowka');
+  }
+
   render() { 
     return ( 
       <>
         <Preloader/>
         <AppWrapper>
           <GeneratorForm company={this.state.company} changeCompany={this.changeCompany} signature={this.state.signature} changeSignatureData={this.changeSignatureData}/>
-          <StyledSignatureContainer>
-            <Signature company={this.state.company} signature={this.state.signature}/>
-            <textarea name="" id="code" cols="30" rows="10"></textarea>
-          </StyledSignatureContainer>
+          <GeneratorOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>
         </AppWrapper> 
       </>
     );
   }
 }
- 
+
 const AppWrapper = styled.div`
   display: flex;
 `
