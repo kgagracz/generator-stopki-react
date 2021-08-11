@@ -32,9 +32,9 @@ class App extends Component {
   componentDidMount() {
     document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML;
 
-    setInterval(() => {
-      document.getElementById('preloader').classList.remove('show-preloader');
-    }, 700);
+    // setInterval(() => {
+    //   document.getElementById('preloader').classList.remove('show-preloader');
+    // }, 700);
 
     const localstorageSignature = localStorage.getItem(`${this.state.company}-signature`);
     if (localstorageSignature) {

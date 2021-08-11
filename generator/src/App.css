@@ -20,23 +20,27 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #4357AD;
+  background-color: #0563F9;
   z-index: 9999;
 }
 .show-preloader {
   visibility: visible!important;
   opacity: 1;
 }
-#preloader .dot {
-  width: 20px;
-  height: 20px;
-  background-color: #00af91;
-  border-radius: 50px;
+#preloader .letter {
+  font-size: 60px;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 100vh;
+  background-color: #EC008C;
   margin: 20px;
   animation-name: flow;
   animation-direction: alternate;
   animation-iteration-count: infinite;
-  animation-duration: .4s;
+  animation-duration: .8s;
   animation-timing-function: ease;
 }
 
@@ -51,11 +55,14 @@ a {
   }
 }
 #dot-1 {
-  animation-delay: 0s;
+  animation-delay: .0s;
 }
 #dot-2 {
-  animation-delay: .2s;
+  animation-delay: .25s;
 }
 #dot-3 {
-  animation-delay: .4s;
+  animation-delay: 0.5s;
+}
+#dot-4 {
+  animation-delay: .75s;
 }
