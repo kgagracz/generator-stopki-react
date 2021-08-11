@@ -15,11 +15,12 @@ export const StyledButton = styled.button `
   transition: all .2s;
   color: white;
   margin: 15px 5px;
+  box-shadow: 1px 1px 6px #d9d9d9, -1px -1px 6px #ffffff;
   :hover {
     cursor: pointer;
     border-radius: 50px;
     background: #0562f8;
     box-shadow: inset 20px 20px 60px #0453d3,
-              inset -20px -20px 60px #0671ff;
+                inset -20px -20px 60px #0671ff;
   }
 `

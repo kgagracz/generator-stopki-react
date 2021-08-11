@@ -7,7 +7,19 @@ export const StyledInput = styled.input`
     border: 1px solid #e4e4e4;
     padding: 10px;
     margin: 10px;
-    & :focus {
+    box-shadow: inset 1px 1px 3px #d9d9d9, inset -1px -1px 3px #ffffff;
+    &:focus {
         outline: none;
+    }
+`
+
+export const StyledLabelContainer= styled.div`
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    label {
+        width: 100%;
     }
 `
