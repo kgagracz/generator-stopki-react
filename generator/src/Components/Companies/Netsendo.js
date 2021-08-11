@@ -14,20 +14,33 @@ const Netsendo = (props) => {
                         class="name-typography-output" 
                         data-output-target="name" 
                         style={styles.name}>
-                            {props.signature.nameSurname[0]}
+                            {props.signature.nameSurname ? props.signature.nameSurname : null}
                         </p>
                         <p 
                         id="position-output" 
                         data-output-target="position" 
                         class="position-typography-output" 
                         style={styles.posistion}>
-                            {props.signature.position[0]}
+                            {props.signature.position ? props.signature.position : null}
                         </p>
                         <ul style={styles.ul}>
-                            <li style={styles.li}><span style={styles.bold}>tel: </span> <span id="phone-output" data-output-target="phone">{props.signature.tel1[0]}</span> </li>
-                            <li style={styles.li} id="phone2-output"><span style={styles.bold}>tel: </span> <span data-output-target="phone2">{props.signature.tel2[0]}</span> </li>
-                            <li style={styles.li}><span style={styles.bold}>email: </span> <span id="email-output" data-output-target="email">{props.signature.email[0]}</span> </li>
-                            <li style={styles.li} id="website-output" data-output-target="website"><a style={{textDecoration: 'none'}}>{props.signature.website[0]}</a></li>
+                            <li style={styles.li}>
+                                <span style={styles.bold}>tel: </span> <span id="phone-output" data-output-target="phone">
+                                    {props.signature.tel1 ? props.signature.tel1 : null}
+                                </span> 
+                            </li>
+                            <li style={styles.li} id="phone2-output"><span style={styles.bold}>tel: </span> <span data-output-target="phone2">
+                                    {props.signature.tel2 ? props.signature.tel2 : null}
+                                </span> 
+                            </li>
+                            <li style={styles.li}><span style={styles.bold}>email: </span> <span id="email-output" data-output-target="email">
+                                    {props.signature.email ? props.signature.email : null}
+                                </span>
+                             </li>
+                            <li style={styles.li} id="website-output" data-output-target="website"><a style={{textDecoration: 'none'}}>
+                                {props.signature.website ? props.signature.website : null}
+                            </a>
+                            </li>
                         </ul> 
                     </td> 
                 </tr>

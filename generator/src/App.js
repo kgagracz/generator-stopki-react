@@ -12,24 +12,24 @@ import Signature from './Components/Signature';
 
 import { StyledSignatureContainer } from './Components/StyledComponents/StyledSignatureContainer';
 
-
+// usuwam tablice z objektu ze state trzeba zmienic w JSX 
 class App extends Component {
   state = { 
     signature: {
-          nameSurname: ['Ania Kowalska', 'Imię i nazwisko'],
-          position: ['Specialista ds. sprzedaży', 'Stanowisko'],
-          tel1: ['+48 111 111 111', 'Numer telefonu'],
-          tel2: ['+48 222 222 222', 'Numer telefonu 2'],
-          email: ['imie.nazwisko@firma.pl', 'E-mail'],
-          website: ['www.netsendo.pl', 'Strona internetowa'],
-          logo: ['logo'],
-          avatarUrl: ['http://stopka.ec-at.com/img/avatar-woman.png', 'Adres Url avatara'],
-          fbUrl: ['social url', 'Link do Facebooka'],
-          igUrl: ['social url', 'Link do Instagrama'],
-          liUrl: ['social url', 'Link do LinkedIn'],
-          bannerImgUrl: ['baner img', 'Adres Url banera'],
-          bannerLinkUrl: ['baner link', 'Link do którego prowadzi baner'],
-          bottomText: ['bottom tekst', 'Dolny tekst'],
+          nameSurname: 'Ania Kowalska',
+          position: 'Specialista ds. sprzedaży',
+          tel1: '+48 111 111 111', 
+          tel2: '+48 222 222 222', 
+          email: 'imie.nazwisko@firma.pl', 
+          website: 'www.netsendo.pl', 
+          logo: 'logo',
+          avatarUrl: 'http://stopka.ec-at.com/img/avatar-woman.png',
+          fbUrl: 'social url',
+          igUrl: 'social url',
+          liUrl: 'social url',
+          bannerImgUrl: 'baner img', 
+          bannerLinkUrl: 'baner link',
+          bottomText: 'bottom tekst',
         },
           
       company: 'netsendo',
@@ -40,21 +40,20 @@ class App extends Component {
     document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML
   }
 
-  changeSignatureData = (name, value) => {
-    this.setState({signature : value})
-    console.log(this.state.signature[name], value)
+  changeSignatureData = (signature) => {
+    this.setState({signature: signature})
   }
-
+  
   changeCompany = (company) => {
     this.setState({company: company})
   }
-
+  
   render() { 
     return ( 
       <>
         <Preloader/>
         <AppWrapper>
-          <GeneratorForm changeCompany={this.changeCompany} signature={this.state.signature} setState={this.setState} changeSignatureData={this.changeSignatureData}/>
+          <GeneratorForm company={this.state.company} changeCompany={this.changeCompany} signature={this.state.signature} changeSignatureData={this.changeSignatureData}/>
           <StyledSignatureContainer>
             <Signature company={this.state.company} signature={this.state.signature}/>
             <textarea name="" id="code" cols="30" rows="10"></textarea>

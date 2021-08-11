@@ -1,22 +1,30 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 
 import { StyledInput, StyledLabelContainer } from './StyledComponents/Input.style';
 const Form = (props) => {
-    let values = props.signature;
-    const displayInputs = Object.keys(values).map(key => 
-                <>
-                    <StyledLabelContainer>
-                        <label htmlFor={values[key][0]}>{values[key][1]}</label>
-                        <StyledInput name={key} onChange={(e) => props.changeSignatureData(e.target.name, e.target.value)} placeholder={values[key][0]} id={values[key][0]}/>
-                    </StyledLabelContainer>
-                </>
-             
-        ) 
+    let signature = props.signature;
+
+    const changeData = (name, value) => {
+        const data = Object.create(signature)
+        signature[name] = value;
+        return signature;
+    }
+
+    const displayInputs = Object.keys(signature).map(key => {
+        return( <>
+            <StyledLabelContainer>
+                <StyledInput name={key} onChange={(e) => changeData(e.target.name, e.target.value)} placeholder={signature[key]} id={signature[key]}/>
+            </StyledLabelContainer>
+        </>)
+        }
+    ) 
+    
         
     return ( <>
         <StyledForm>
             {displayInputs}
+            <button onClick={() => props.changeSignatureData(signature)}>kliknij </button>
         </StyledForm>
     </> );
 }
