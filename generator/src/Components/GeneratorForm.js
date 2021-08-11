@@ -4,10 +4,18 @@ import { Link, Route, Redirect, Switch } from 'react-router-dom';
 import styled from "styled-components";
 import { styles } from "./StyledComponents/styleVariables";
 
+import Typography from "./Typography";
+
 import { StyledButton } from "./StyledComponents/Button.style";
 
 import Form from "./Form";
+import { useState } from "react";
 const GeneratorForm = (props) => {
+    const [displayTypography, setDisplayTypography] = useState(false);
+    const toggleTypography = () => {
+        setDisplayTypography(!displayTypography);
+    }
+
     return ( <>
         <StyledGeneratorForm>
 
@@ -20,7 +28,11 @@ const GeneratorForm = (props) => {
                         <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>
                     </Router>
                 </StyledThemeSwitchersContainer>
-                <Form changeSignatureData={props.changeSignatureData} signature={props.signature}/>
+                {displayTypography ? 
+                <Typography signature={props.signature} toggleTypography={toggleTypography}/>
+                : null
+                }
+                <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={toggleTypography}/>
 
         </StyledGeneratorForm>
     </> );

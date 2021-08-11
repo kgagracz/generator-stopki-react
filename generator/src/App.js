@@ -58,7 +58,12 @@ class App extends Component {
       <>
         <Preloader/>
         <AppWrapper>
-          <GeneratorForm company={this.state.company} changeCompany={this.changeCompany} signature={this.state.signature} changeSignatureData={this.changeSignatureData}/>
+          <GeneratorForm 
+          company={this.state.company} 
+          changeCompany={this.changeCompany} 
+          signature={this.state.signature} 
+          changeSignatureData={this.changeSignatureData}
+          />
           <GeneratorOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>
         </AppWrapper> 
       </>
