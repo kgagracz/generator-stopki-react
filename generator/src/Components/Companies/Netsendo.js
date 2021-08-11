@@ -10,14 +10,14 @@ const Netsendo = (props) => {
                     </td>
                     <td rowSpan="3" style={{padding: 0}}>
                         <p 
-                        id="name-output" 
+                        id="nameSurname" 
                         class="name-typography-output" 
                         data-output-target="name" 
                         style={styles.name}>
                             {props.signature.nameSurname ? props.signature.nameSurname : null}
                         </p>
                         <p 
-                        id="position-output" 
+                        id="position" 
                         data-output-target="position" 
                         class="position-typography-output" 
                         style={styles.posistion}>
@@ -25,19 +25,19 @@ const Netsendo = (props) => {
                         </p>
                         <ul style={styles.ul}>
                             <li style={styles.li}>
-                                <span style={styles.bold}>tel: </span> <span id="phone-output" data-output-target="phone">
+                                <span style={styles.bold}>tel: </span> <span id="tel1" data-output-target="phone">
                                     {props.signature.tel1 ? props.signature.tel1 : null}
                                 </span> 
                             </li>
-                            <li style={styles.li} id="phone2-output"><span style={styles.bold}>tel: </span> <span data-output-target="phone2">
+                            <li style={styles.li} id="tel2"><span style={styles.bold}>tel: </span> <span data-output-target="phone2">
                                     {props.signature.tel2 ? props.signature.tel2 : null}
                                 </span> 
                             </li>
-                            <li style={styles.li}><span style={styles.bold}>email: </span> <span id="email-output" data-output-target="email">
+                            <li style={styles.li}><span style={styles.bold}>email: </span> <span id="email" data-output-target="email">
                                     {props.signature.email ? props.signature.email : null}
                                 </span>
                              </li>
-                            <li style={styles.li} id="website-output" data-output-target="website"><a style={{textDecoration: 'none'}}>
+                            <li style={styles.li} id="website" data-output-target="website"><a style={{textDecoration: 'none'}}>
                                 {props.signature.website ? props.signature.website : null}
                             </a>
                             </li>
@@ -51,31 +51,31 @@ const Netsendo = (props) => {
                 </tr>
                 <tr style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '10px 0'}}>
                     <td>
-                        <a style={styles.SMLinks} id="fb-output" href="https://www.facebook.com/NetSendoPL">
+                        <a style={styles.SMLinks} id="fbUrl" href={props.signature.fbUrl}>
                             <img src="http://stopka.ec-at.com/img/fb.png" widtd="20" height="20" alt=""></img>
                         </a>
                     </td>
                     <td>
-                        <a style={styles.SMLinks} id="ig-output" href="https://www.instagram.com/net_sendo/">
+                        <a style={styles.SMLinks} id="igUrl" href={props.signature.igUrl}>
                             <img src="http://stopka.ec-at.com/img/ig.png" widtd="21" height="21" alt=""></img>
                         </a>
                     </td>
                     <td>
-                        <a style={styles.SMLinks} id="li-output" href="https://www.linkedin.com/company/netsendo/">
+                        <a style={styles.SMLinks} id="liUrl" href={props.signature.liUrl}>
                             <img src="http://stopka.ec-at.com/img/in.png" widtd="20" height="20" alt=""></img>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colSpan="7">
-                        <a id="banner-link-output" href="http://netsendo.pl">
-                            <img id="banner-url-output" src="https://netsendo.com/wp-content/uploads/2021/06/netsendo-wyzszy-poziom-sprzedazy.jpg" width="600px" height="110" alt="baner"></img>
+                        <a id="bannerLinkUrl" href={props.signature.bannerLinkUrl}>
+                            <img id="bannerImgUrl" src={props.signature.bannerImgUrl} width="600px" height="110" alt="baner"></img>
                         </a>
                     </td>
                 </tr>
                 <tr>
                     <td colSpan="7">
-                        <p style={styles.bottomText} id="bottom-output" data-output-target="bottom-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem, at tenetur aliquam voluptatum ipsam reprehenderit officiis voluptate assumenda iste. Molestiae optio ipsam porro repellendus nam labore laboriosam dicta beatae ducimus?</p>
+                        <p style={styles.bottomText} id="bottomText" data-output-target="bottom-text">{props.signature.bottomText}</p>
                     </td>
                 </tr>
             </table>

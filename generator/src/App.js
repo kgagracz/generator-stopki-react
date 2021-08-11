@@ -1,6 +1,3 @@
-// TODO 
-// Trzeba zrobić osobną tablicę, która będzie zbierać wpisane dane i podmieniać tablice ze state na tą tablice
-
 import './App.css';
 import {Link} from 'react-router';
 import React, { Component } from 'react';
@@ -21,11 +18,11 @@ class App extends Component {
           website: 'www.netsendo.pl', 
           logo: 'logo',
           avatarUrl: 'http://stopka.ec-at.com/img/avatar-woman.png',
-          fbUrl: 'social url',
-          igUrl: 'social url',
-          liUrl: 'social url',
-          bannerImgUrl: 'baner img', 
-          bannerLinkUrl: 'baner link',
+          fbUrl: 'https://www.facebook.com/NetSendoPL/',
+          igUrl: 'https://www.instagram.com/net_sendo/',
+          liUrl: 'https://www.linkedin.com/company/netsendo/',
+          bannerImgUrl: 'https://netsendo.com/wp-content/uploads/2021/06/netsendo-wyzszy-poziom-sprzedazy.jpg', 
+          bannerLinkUrl: 'http://netsendo.pl',
           bottomText: 'bottom tekst',
         },
           
@@ -34,13 +31,20 @@ class App extends Component {
 
   componentDidMount() {
     document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML;
+
     setInterval(() => {
       document.getElementById('preloader').classList.remove('show-preloader');
     }, 700);
+
+    const localstorageSignature = localStorage.getItem(`${this.state.company}-signature`);
+    if (localstorageSignature) {
+      this.setState({signature: JSON.parse(localstorageSignature)})
+    } 
   }
 
   changeSignatureData = (signature) => {
     this.setState({signature: signature})
+    localStorage.setItem(`${this.state.company}-signature`, JSON.stringify(signature))
   }
   
   changeCompany = (company) => {

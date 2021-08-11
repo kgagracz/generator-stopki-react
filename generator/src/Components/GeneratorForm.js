@@ -11,10 +11,6 @@ import { StyledButton } from "./StyledComponents/Button.style";
 import Form from "./Form";
 import { useState } from "react";
 const GeneratorForm = (props) => {
-    const [displayTypography, setDisplayTypography] = useState(false);
-    const toggleTypography = () => {
-        setDisplayTypography(!displayTypography);
-    }
 
     return ( <>
         <StyledGeneratorForm>
@@ -28,11 +24,7 @@ const GeneratorForm = (props) => {
                         <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>
                     </Router>
                 </StyledThemeSwitchersContainer>
-                {displayTypography ? 
-                <Typography signature={props.signature} toggleTypography={toggleTypography}/>
-                : null
-                }
-                <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={toggleTypography}/>
+                <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={props.toggleTypography}/>
 
         </StyledGeneratorForm>
     </> );
