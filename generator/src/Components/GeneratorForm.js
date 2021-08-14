@@ -21,7 +21,7 @@ const GeneratorForm = (props) => {
                         <StyledButton onClick={() => props.changeCompany('netsendo')}>Netsendo</StyledButton>
                         <StyledButton onClick={() => props.changeCompany('ecat')}> EC-AT</StyledButton>
                         <StyledButton onClick={() => props.changeCompany('aderlo')}>Aderlo</StyledButton>
-                        <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>
+                        <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>  
                     </Router>
                 </StyledThemeSwitchersContainer>
                 <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={props.toggleTypography}/>

@@ -30,11 +30,10 @@ class App extends Component {
    }
 
   componentDidMount() {
-    document.querySelector('#code').textContent = document.querySelector('#Tabela_01').outerHTML;
 
-    // setInterval(() => {
-    //   document.getElementById('preloader').classList.remove('show-preloader');
-    // }, 700);
+    setInterval(() => {
+      document.getElementById('preloader').classList.remove('show-preloader');
+    }, 700);
 
     const localstorageSignature = localStorage.getItem(`${this.state.company}-signature`);
     if (localstorageSignature) {
@@ -44,7 +43,7 @@ class App extends Component {
 
   changeSignatureData = (signature) => {
     this.setState({signature: signature})
-    localStorage.setItem(`${this.state.company}-signature`, JSON.stringify(signature))
+    localStorage.setItem(`${this.state.company}-signature`, JSON.stringify(signature));
   }
   
   changeCompany = (company) => {
