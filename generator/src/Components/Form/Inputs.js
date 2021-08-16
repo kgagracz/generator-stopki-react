@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 
 import InputField from './InputField';
 
+import { StyledLabelContainer } from '../StyledComponents/Input.style';
+
+import {CgMathMinus} from 'react-icons/cg';
+import {BsPencil} from 'react-icons/bs';
+
 const Inputs = (props) => {
     return ( 
         <>
@@ -88,6 +93,16 @@ const Inputs = (props) => {
             <InputField 
             type='text'
             signature={props.signature}
+            name='bannerImgUrl'
+            label='Link do banera (zdjęcie)'
+            id='bannerImgUrl-input'
+            placeholder='https://www.linkedin.com/company/netsendo/'
+            toggleElement={props.toggleElement}
+            toggleTypography={props.toggleTypography}
+            />
+            <InputField 
+            type='text'
+            signature={props.signature}
             name='bannerLinkUrl'
             label='Link do którego prowadzi baner'
             id='bannerLinkUrl-input'
@@ -95,6 +110,20 @@ const Inputs = (props) => {
             toggleElement={props.toggleElement}
             toggleTypography={props.toggleTypography}
             />
+            <StyledLabelContainer>
+                <label htmlFor='bottomText'>Dolny text</label>
+                <BsPencil 
+                target={'bottomText'}
+                onClick={() => props.toggleTypography()}/>
+                <CgMathMinus onClick={() => props.toggleElement('bottomText')}/>
+                <textarea 
+                name='bottomText'
+                id='bottomText-input'
+                placeholder='Cześć, mam na imię Krystian i jestem początkującym, prężnie rozwijającym się front-end developerem.'
+                toggleElement={props.toggleElement}
+                toggleTypography={props.toggleTypography}
+                />
+            </StyledLabelContainer>
         </>
      );
 }

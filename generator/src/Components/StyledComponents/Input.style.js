@@ -23,4 +23,17 @@ export const StyledLabelContainer= styled.div`
         width: 80%;
         display: inline;
     }
+    textarea {
+    width: 100%;
+    background-color: transparent;
+    border-radius: 20px;
+    border: 1px solid #e4e4e4;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: inset 1px 1px 3px #d9d9d9, inset -1px -1px 3px #ffffff;
+    height: 80px;
+    &:focus {
+        outline: none;
+    }
+    }
 `

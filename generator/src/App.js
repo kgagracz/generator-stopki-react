@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Preloader from './Components/Preloader';
-import GeneratorForm from './Components/GeneratorForm';
+import Generator from './Components/Generator';
 import GeneratorOutput from './Components/GeneratorOutput';
  
 class App extends Component {
@@ -61,7 +61,7 @@ class App extends Component {
       <>
         <Preloader/>
         <AppWrapper>
-          <GeneratorForm 
+          <Generator 
           company={this.state.company} 
           changeCompany={this.changeCompany} 
           signature={this.state.signature} 

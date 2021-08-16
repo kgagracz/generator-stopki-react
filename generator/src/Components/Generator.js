@@ -1,4 +1,4 @@
-import { StyledGeneratorForm } from "./StyledComponents/GeneratorForm.style";
+import { StyledGenerator } from "./StyledComponents/Generator.style";
 import { BrowserRouter as Router } from "react-router-dom";
 import { Link, Route, Redirect, Switch } from 'react-router-dom';
 import styled from "styled-components";
@@ -10,10 +10,10 @@ import { StyledButton } from "./StyledComponents/Button.style";
 
 import Form from "./Form/Form";
 import { useState } from "react";
-const GeneratorForm = (props) => {
+const Generator = (props) => {
 
     return ( <>
-        <StyledGeneratorForm>
+        <StyledGenerator>
 
                 <h1>Wybierz motyw</h1>
                 <StyledThemeSwitchersContainer>
@@ -26,7 +26,7 @@ const GeneratorForm = (props) => {
                 </StyledThemeSwitchersContainer>
                 <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={props.toggleTypography}/>
 
-        </StyledGeneratorForm>
+        </StyledGenerator>
     </> );
 }
  
@@ -60,4 +60,4 @@ const StyledThemeSwitchersContainer = styled.div`
     }
 `
 
-export default GeneratorForm;
+export default Generator;

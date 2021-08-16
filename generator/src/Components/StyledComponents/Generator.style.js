@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledGeneratorForm = styled.div`
+export const StyledGenerator = styled.div`
     width: 450px;
     height: 150vh;
     display: flex;
