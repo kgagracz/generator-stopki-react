@@ -8,7 +8,7 @@ import Typography from "./Typography";
 
 import { StyledButton } from "./StyledComponents/Button.style";
 
-import Form from "./Form";
+import Form from "./Form/Form";
 import { useState } from "react";
 const GeneratorForm = (props) => {
 

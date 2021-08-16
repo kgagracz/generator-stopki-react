@@ -20,6 +20,7 @@ export const StyledLabelContainer= styled.div`
     justify-content: space-between;
     align-items: center;
     label {
-        width: 100%;
+        width: 80%;
+        display: inline;
     }
 `
