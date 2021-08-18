@@ -5,7 +5,7 @@ import styled from 'styled-components';
 
 import Preloader from './Components/Preloader';
 import Generator from './Components/Generator';
-import GeneratorOutput from './Components/GeneratorOutput';
+import CodeOutput from './Components/CodeOutput';
  
 class App extends Component {
   state = { 
@@ -41,6 +41,11 @@ class App extends Component {
     } 
   }
 
+  resetLocalstorage = () => {
+    localStorage.removeItem(`${this.state.company}-signature`);
+    //tutaj trzeba rerenderowac komponent i zastąpywać state jakimś gotowym obiektem
+  }
+
   changeSignatureData = (signature) => {
     this.setState({signature: signature})
     localStorage.setItem(`${this.state.company}-signature`, JSON.stringify(signature));
@@ -66,8 +71,9 @@ class App extends Component {
           changeCompany={this.changeCompany} 
           signature={this.state.signature} 
           changeSignatureData={this.changeSignatureData}
+          resetLocalstorage={this.resetLocalstorage}
           />
-          <GeneratorOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>
+          <CodeOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>
         </AppWrapper> 
       </>
     );

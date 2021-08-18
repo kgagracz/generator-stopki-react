@@ -7,7 +7,7 @@ const Typography = (props) => {
         document.getElementById(target).style[property] = value;
     }
 
-    console.log(props.id) //tutaj jest bug, loguje kazde id
+    console.log(props.id) //BUG ZAMYKANIA TYPOGRAFII, loguje kazde id
 
     return ( 
     <>

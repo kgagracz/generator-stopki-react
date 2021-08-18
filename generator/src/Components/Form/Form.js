@@ -1,11 +1,11 @@
 import React, { Component, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { StyledButton } from '../StyledComponents/Button.style';
+import { StyledButton, StyledSecondaryButton } from '../StyledComponents/Button.style';
+import { StyledLabelContainer } from '../StyledComponents/Input.style';
 
 import Typography from '../Typography';
 import Inputs from './Inputs';
 
-import { StyledInput, StyledLabelContainer } from '../StyledComponents/Input.style';
 const Form = (props) => {
 
     let signature = props.signature
@@ -47,6 +47,7 @@ const Form = (props) => {
 
             <StyledLabelContainer>
                 <StyledButton onClick={() => handleClick(signature)}>Generuj </StyledButton>
+                <StyledSecondaryButton onClick={() => props.resetLocalstorage()}>Resetuj</StyledSecondaryButton>
             </StyledLabelContainer>
         </StyledForm>
     </> );

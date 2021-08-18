@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const StyledTypography = styled.div`
-    background-color: #f4f4f4;
+    z-index: 10;
+    background-color: #fff;
     width: 300px;
     min-height: 300px;
     position: absolute;
@@ -9,8 +10,7 @@ export const StyledTypography = styled.div`
     top: 50px;
     box-shadow: 1px 1px 8px #d9d9d9, -1px -1px 8px #ffffff;
     opacity: 0;
-    z-index: 10;
-    transition: all .2s ease-in-out;
+    transition: all .1s ease-in-out;
     svg {
         position: absolute;
         top: 5px;

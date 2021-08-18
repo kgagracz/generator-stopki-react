@@ -50,6 +50,7 @@ const Inputs = (props) => {
             toggleElement={props.toggleElement}
             toggleTypography={toggleTypography}
             />
+            <Typography target='nameSurname' id='tel1-typography' signature={props.signature} toggleTypography={toggleTypography}/>
             <InputField 
             type='text'
             signature={props.signature}

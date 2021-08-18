@@ -24,7 +24,7 @@ const Generator = (props) => {
                         <StyledButton onClick={() => props.changeCompany('bd')}>BD</StyledButton>  
                     </Router>
                 </StyledThemeSwitchersContainer>
-                <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={props.toggleTypography}/>
+                <Form changeSignatureData={props.changeSignatureData} signature={props.signature} toggleTypography={props.toggleTypography} resetLocalstorage={props.resetLocalstorage}/>
 
         </StyledGenerator>
     </> );

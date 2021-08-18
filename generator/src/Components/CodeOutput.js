@@ -3,7 +3,7 @@ import React, { Component, useEffect } from 'react';
 import { StyledSignatureContainer } from './StyledComponents/StyledSignatureContainer';
 import { StyledButton } from './StyledComponents/Button.style';
 import Signature from './Signature';
-const GeneratorOutput = (props) => {
+const CodeOutput = (props) => {
   return ( 
         <>
           <StyledSignatureContainer>
@@ -17,4 +17,4 @@ const GeneratorOutput = (props) => {
      );
 }
  
-export default GeneratorOutput;
+export default CodeOutput;
