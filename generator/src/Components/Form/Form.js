@@ -8,8 +8,6 @@ import Inputs from './Inputs';
 import { StyledInput, StyledLabelContainer } from '../StyledComponents/Input.style';
 const Form = (props) => {
 
-    console.log(props)
-
     let signature = props.signature
 
     useEffect(() => {
@@ -19,14 +17,8 @@ const Form = (props) => {
         })
 
 
-    const [displayTypography, setDisplayTypography] = useState(false);
-    const toggleTypography = () => {
-        setDisplayTypography(!displayTypography);
-    }
-
     const toggleElement = (target) => {
         let element = document.getElementById(target);
-        console.log(element)
         if (element.style.display !== 'none') {
             element.style.display = 'none';
         } 
@@ -51,10 +43,8 @@ const Form = (props) => {
 
     return ( <>
         <StyledForm>
-            <Inputs signature={props.signature} toggleElement={toggleElement} toggleTypography={toggleTypography}/>
-            {displayTypography ? 
-            <Typography signature={props.signature} toggleTypography={toggleTypography}/>
-            : null }
+            <Inputs signature={props.signature} toggleElement={toggleElement}/>
+
             <StyledLabelContainer>
                 <StyledButton onClick={() => handleClick(signature)}>Generuj </StyledButton>
             </StyledLabelContainer>

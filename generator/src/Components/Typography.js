@@ -5,13 +5,14 @@ const Typography = (props) => {
 
     const changeTypography = (target, property, value) => {
         document.getElementById(target).style[property] = value;
-        console.log(target, property, value)
     }
-    
+
+    console.log(props.id) //tutaj jest bug, loguje kazde id
+
     return ( 
     <>
-        <StyledTypography>
-            <GrClose onClick={() => props.toggleTypography()}/>
+        <StyledTypography id={props.id}>
+            <GrClose onClick={() => props.toggleTypography(props.id)}/>
             <input onChange={(e) => changeTypography(props.target, 'color', e.target.value)} type="color" name="" id=""/>
             <input onChange={(e) => changeTypography(props.target, 'fontSize', String(e.target.value)+'px')} type="number" name="" id="" />
         </StyledTypography>

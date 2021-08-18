@@ -22,7 +22,7 @@ const InputField = (props) => {
                 <label htmlFor={props.name}>{props.label}</label>
                 <BsPencil 
                 target={props.name}
-                onClick={() => props.toggleTypography()}/>
+                onClick={() => props.toggleTypography(props.name+'-typography')}/>
                 <CgMathMinus onClick={() => props.toggleElement(props.name)}/>
                 <StyledInput 
                 type={props.type}

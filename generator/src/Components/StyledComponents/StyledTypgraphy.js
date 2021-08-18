@@ -8,6 +8,9 @@ export const StyledTypography = styled.div`
     left: 420px;
     top: 50px;
     box-shadow: 1px 1px 8px #d9d9d9, -1px -1px 8px #ffffff;
+    opacity: 0;
+    z-index: 10;
+    transition: all .2s ease-in-out;
     svg {
         position: absolute;
         top: 5px;
