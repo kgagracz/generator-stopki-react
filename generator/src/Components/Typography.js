@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { StyledTypography } from './StyledComponents/StyledTypgraphy';
+import { StyledTypography, TypographyHead, TypographyBody, TypographyInputField } from './StyledComponents/StyledTypgraphy';
 import {GrClose} from 'react-icons/gr';
 const Typography = (props) => {
 
@@ -7,14 +7,23 @@ const Typography = (props) => {
         document.getElementById(target).style[property] = value;
     }
 
-    console.log(props.id) //BUG ZAMYKANIA TYPOGRAFII, loguje kazde id
-
     return ( 
     <>
-        <StyledTypography id={props.id}>
-            <GrClose onClick={() => props.toggleTypography(props.id)}/>
-            <input onChange={(e) => changeTypography(props.target, 'color', e.target.value)} type="color" name="" id=""/>
-            <input onChange={(e) => changeTypography(props.target, 'fontSize', String(e.target.value)+'px')} type="number" name="" id="" />
+        <StyledTypography id={props.id} style={{display: props.display ? 'block' : 'none' }}>
+            <TypographyHead>
+                <h3>Imię</h3>
+                <GrClose onClick={props.toggleTypography}/>
+            </TypographyHead>
+            <TypographyBody>
+                <TypographyInputField>
+                    <p>Kolor</p>
+                    <input onChange={(e) => changeTypography(props.target, 'color', e.target.value)} type="color" name="" id=""/>
+                </TypographyInputField>
+                <TypographyInputField>
+                    <p>Rozmiar</p>
+                    <input onChange={(e) => changeTypography(props.target, 'fontSize', String(e.target.value)+'px')} type="number" name="" id="" />
+                </TypographyInputField>
+            </TypographyBody>
         </StyledTypography>
     </> 
     );

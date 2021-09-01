@@ -6,9 +6,13 @@ export const StyledSignatureContainer = styled.div`
     justify-content: center;
     right: 20%;
     flex-wrap: wrap;
-    padding-top: 50px;
-    margin: 50px;
+    padding-top: 60px;
     position: fixed;
+    top: 60px;
+    @media screen and (max-width: 991px) {
+        position: static;
+        width: 100%;
+    }
     table {
         box-shadow: 1px 1px 4px #d9d9d9, -1px -1px 4px #ffffff;
     }

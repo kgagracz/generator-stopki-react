@@ -6,10 +6,14 @@ import styled from 'styled-components';
 import Preloader from './Components/Preloader';
 import Generator from './Components/Generator';
 import CodeOutput from './Components/CodeOutput';
+import Signature from './Components/Signature';
+import { StyledSignatureContainer } from './Components/StyledComponents/StyledSignatureContainer';
  
 class App extends Component {
   state = { 
     signature: {
+          reset: false,
+          refresh: false,
           nameSurname: 'Ania Kowalska',
           position: 'Specialista ds. sprzedaży',
           tel1: '+48 111 111 111', 
@@ -43,7 +47,6 @@ class App extends Component {
 
   resetLocalstorage = () => {
     localStorage.removeItem(`${this.state.company}-signature`);
-    //tutaj trzeba rerenderowac komponent i zastąpywać state jakimś gotowym obiektem
   }
 
   changeSignatureData = (signature) => {
@@ -73,15 +76,18 @@ class App extends Component {
           changeSignatureData={this.changeSignatureData}
           resetLocalstorage={this.resetLocalstorage}
           />
-          <CodeOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>
-        </AppWrapper> 
+          <StyledSignatureContainer> 
+            <Signature company={this.state.company} signature={this.state.signature}/>
+            <CodeOutput company={this.state.company} signature={this.state.signature} copyCode={this.copyCode}/>  
+          </StyledSignatureContainer>
+        </AppWrapper>
       </>
     );
   }
 }
 
 const AppWrapper = styled.div`
-  display: flex;
+
 `
 
 export default App;

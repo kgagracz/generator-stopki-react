@@ -35,7 +35,7 @@ const StyledThemeSwitchersContainer = styled.div`
     flex-wrap: no-wrap;
     justify-content: center;
     width: 100%;
-    padding: 0 0 20px 0;
+    margin-bottom: 30px;
     top: 0;
     a {
         width: 25%;

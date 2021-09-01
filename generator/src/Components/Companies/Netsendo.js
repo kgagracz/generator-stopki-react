@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { styles } from '../StyledComponents/signatureStyleVariables';
 const Netsendo = (props) => {
+
+    let res = window.screen.availWidth;
+
     return ( 
         <>        
-            <table id="Tabela_01" style={styles.table} leftMargin="0" topMargin="0" marginWidth="0" marginHeight="0" width="600" cellPadding="0" cellSpacing="0">
+            <table id="Tabela_01" style={styles.table} leftMargin="0" topMargin="0" marginWidth="0" marginHeight="0" width={res < 991 ? res : 600} cellPadding="0" cellSpacing="0">
                 <tr>
                     <td colSpan="3" style={{display: 'flex', justifyContent: 'center',}}>
                         <img id="image-output" src="https://netsendo.com/wp-content/uploads/2021/06/julia-dylag.png" widtd="150" height="150" alt="profil" style={{objectFit:'contain'}}></img>
@@ -24,8 +27,8 @@ const Netsendo = (props) => {
                             {props.signature.position ? props.signature.position  : null}
                         </p>
                         <ul style={styles.ul}>
-                            <li style={styles.li}>
-                                <span style={styles.bold}>tel: </span> <span id="tel1" data-output-target="phone">
+                            <li style={styles.li} id="tel1">
+                                <span style={styles.bold}>tel: </span> <span data-output-target="phone">
                                     {props.signature.tel1 ? props.signature.tel1 : null}
                                 </span> 
                             </li>
@@ -69,7 +72,7 @@ const Netsendo = (props) => {
                 <tr>
                     <td colSpan="7">
                         <a id="bannerLinkUrl" href={props.signature.bannerLinkUrl}>
-                            <img id="bannerImgUrl" src={props.signature.bannerImgUrl} width="600px" height="110" alt="baner"></img>
+                            <img id="bannerImgUrl" src={props.signature.bannerImgUrl} width={res < 991 ? res : 600} height="110" alt="baner"></img>
                         </a>
                     </td>
                 </tr>
